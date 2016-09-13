@@ -3,10 +3,10 @@
   <ul>
     <% @questions.each do |question| %>
       <li>
-        <h3><%= question.title %></h3>
+        <h3><%= link_to question.title, question_path(question) %></h3>
         <p><%= question.content %></p>
       </li>
     <% end %>
   </ul>
 
-<p> <%= link_to "Ask a new question", new_user_question_path(current_user)  %></p>
+<p> <%= link_to "Ask a new question", new_question_path  %></p>
