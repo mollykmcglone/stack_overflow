@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :questions
 
-  validates :email, :password, :presence => true
+  validates :email, :password_digest, :presence => true
 
   validates_uniqueness_of :email
 

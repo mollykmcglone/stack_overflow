@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
-  validates :title, :content, :votes, :presence => true
+  validates :title, :content, :votes, :user_id, :presence => true
+  belongs_to :user
 
   after_initialize :init
 
