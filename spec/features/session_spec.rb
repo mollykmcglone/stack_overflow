@@ -19,6 +19,7 @@ describe "the destroy a session process" do
     click_on 'log in'
     fill_in 'Email', :with => 'Perdlfk'
     fill_in 'Password', :with => 'yomama'
-    expect(page).to have_content('Log In')
+    click_on 'Log In'
+    expect(page).to have_content('Email or password is invalid')
   end
 end

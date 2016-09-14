@@ -25,4 +25,13 @@ describe "the edit question feature" do
     expect(page).to_not have_content 'How are you?'
   end
 
+  it "won't update a question without a title" do
+    click_on 'How are you?'
+    click_on 'Edit Question'
+    fill_in 'Title', :with => ''
+    fill_in 'Content', :with => 'A very very important question here...'
+    click_on 'Update Question'
+    expect(page).to have_content 'Form is invalid'
+  end
+
 end
